@@ -6,7 +6,7 @@ Licensed unter MIT-License
 <html>
 	<head>
 		<!-- OTHER -->
-		<title>Softwarename</title>
+		<title>SoOr</title>
 		<!-- META -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

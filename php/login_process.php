@@ -21,6 +21,8 @@ Licensed unter MIT-License
 			if(!isset($_POST['username'])) {
 				errorAll("Error!", "You haven't set the username.");
 			}
+			
+			
 		?>
 	</body>
 </html>
