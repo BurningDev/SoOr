@@ -11,13 +11,13 @@ Licensed unter MIT-License
 		<div class="col-xl-6 col-lg-6 col-md-8">
 			<form method="POST" action="php/login_process.php">
 				<div class="form-group">
-					<label for="exampleInputEmail1">Username</label>
-					<input type="email" class="form-control" id="username" name="username" placeholder="Enter username here">
+					<label for="username">Username</label>
+					<input type="text" class="form-control" id="username" name="username" placeholder="Enter username here" required>
 				</div>
 				
 				<div class="form-group">
-					<label for="exampleInputEmail1">Password</label>
-					<input type="password" class="form-control" id="password" name="password" placeholder="Enter password here">
+					<label for="password">Password</label>
+					<input type="password" class="form-control" id="password" name="password" placeholder="Enter password here" required>
 				</div>
 				
 				<input type="submit" class="btn btn-primary"></input>
@@ -25,3 +25,12 @@ Licensed unter MIT-License
 		</div>
 	</div>
 </div>
+
+<div class="fill">
+</div>
+
+<footer>
+	<div class="container">
+		<a href="php/contributors.php">Contributors</a>
+	</div>
+</footer>

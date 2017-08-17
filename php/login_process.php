@@ -6,7 +6,7 @@ Licensed unter MIT-License
 <html>
 	<head>
 		<!-- OTHER -->
-		<title>Softwarename</title>
+		<title>SoOr</title>
 		<!-- META -->
 		<meta charset="utf-8">
 		<!-- CSS -->
@@ -14,7 +14,11 @@ Licensed unter MIT-License
 	</head>
 	<body>
 		<?php
+		    session_start();
+		
 			require('util/alert_util.php');
+			require('dao/UserDAO.php');
+			require("objects/User.php");
 		?>
 		
 		<?php
@@ -22,7 +26,29 @@ Licensed unter MIT-License
 				errorAll("Error!", "You haven't set the username.");
 			}
 			
-			
-		?>
+            $userdao = new UserDAO("localhost", "root", "", "soor");
+            $users = $userdao->getAllUsers();
+            
+            $existUser = false;
+            
+            foreach ($users as $user) {
+                if(strcmp($user->getUsername(), $_POST['username']) == 0) {
+                    $existUser = true;
+                    if(strcmp($user->getPassword(), hash("sha256", $_POST['password'])) == 0) {
+                        $_SESSION['username'] = $_POST['username'];
+                        $_SESSION['password'] = hash("sha256", $_POST['password']);
+                        
+                        successAll("Success!", "You are logged in.");
+                    } else {
+                        errorAll("Error!", "Password is wrong.");
+                        return;
+                    }
+                }
+            }
+            
+            if($existUser == false) {
+                errorAll("Error!", "Username not found.");
+            }
+        ?>
 	</body>
 </html>
