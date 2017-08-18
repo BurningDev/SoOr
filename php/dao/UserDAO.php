@@ -25,5 +25,11 @@
 		    
 		    return $result;
 		}
+		
+		public function createUser($user) {
+		    $sql = "INSERT INTO `soor`.`user` (`CreationDate`, `Username`, `Password`, `Admin`, `Status`) VALUES ('".$user->getCreationDate()."', '".$user->getUsername()."', '".$user->getPassword()."', '".$user->getAdmin()."', '".$user->getStatus()."');";
+		    
+		    mysql_query($sql);
+		}
 	}
 ?>
