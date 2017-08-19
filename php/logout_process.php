@@ -24,5 +24,11 @@ Licensed unter MIT-License
 		      
 		      successAll("Success", "You are logged off.");
         ?>
+        
+        <script type="text/javascript">
+        	setTimeout(function(){ 
+        		window.location.href = '../index.php'; 
+        	}, 2000);
+        </script>
 	</body>
 </html>

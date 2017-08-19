@@ -10,6 +10,18 @@
     			<label>Password</label>
     			<input class="form-control" name="password" type="password" required/>
     		</div>
+    		<div class="form-group">
+    			<label>Role</label>
+        		<select name="role" class="form-control">
+        			<option>web developer</option>
+        			<option>software developer</option>
+        			<option>software architect</option>
+        			<option>graphic artist</option>
+        			<option>project manager</option>
+        			<option>tester</option>
+        			<option>other</option>
+        		</select>
+        	</div>
 			<label>Admin</label>
 			<input class="form-control" style="width: 5%" name="admin" type="checkbox"/><br />
 			<input class="btn btn-primary" type="submit" value="Add" />

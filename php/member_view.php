@@ -1,7 +1,5 @@
 <div class="container">
 	<?php
-	   
-	
 	   require('dao/UserDAO.php');
        require("objects/User.php");
        require('util/alert_util.php');
@@ -24,10 +22,11 @@
     
     <br />
     <h3><?php echo $user->getUsername(); ?></h3>
-    <b>CreationDate: </b><?php echo $user->getCreationDate(); ?>
+    <b>CreationDate: </b><?php echo $user->getCreationDate(); ?><br />
+    <b>Role: </b><?php echo $user->getRole(); ?>
     
     <br /><br />
     
-    <a class="btn btn-danger" href="">Delete</a>
+    <a class="btn btn-danger" href="php/delete_member_process.php?username=<?php echo $user->getUsername(); ?>&id=<?php echo $user->getId(); ?>">Delete</a>
     <a class="btn btn-secondary" href="index.php?page=members">Back</a>
 </div>

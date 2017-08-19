@@ -21,9 +21,10 @@ Licensed unter MIT-License
 			require("objects/User.php");
 		?>
 		
-		<?php
+		<?php		
 			if(!isset($_POST['username'])) {
 				errorAll("Error!", "You haven't set the username.");
+				return;
 			}
 			
             $userdao = new UserDAO("localhost", "root", "", "soor");
@@ -47,6 +48,7 @@ Licensed unter MIT-License
                 $user->setAdmin(0);
             }
             $user->setStatus(0);
+            $user->setRole($_POST['role']);
             $userdao->createUser($user);
             
             successAll("Success!", "Created successful an new user.");

@@ -6,6 +6,7 @@
         <tr>
           <th style="width: 60px">No.</th>
           <th>Username</th>
+          <th>Role</th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +25,7 @@
           	    echo "<tr>";
           	    echo "<th scope=\"row\">".$count."</th>";
           	    echo "<td><a href=\"index.php?page=member_view&username=".$user->getUsername()."\">".$user->getUsername()."</a></td>";
+          	    echo "<td scope=\"row\">".$user->getRole()."</td>";
           	    echo "</tr>";
           	}
       	?>

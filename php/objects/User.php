@@ -4,10 +4,11 @@
 		private $creationDate;
 		private $username;
 		private $password;
+		private $role;
 		private $admin;
 		private $status;
-		
-		public function setId($id) {
+    
+        public function setId($id) {
 			$this->id = $id;
 		}
 		
@@ -21,6 +22,16 @@
 		
 		public function getCreationDate() {
 			return $this->creationDate;
+		}
+		
+		public function getRole()
+		{
+		    return $this->role;
+		}
+		
+		public function setRole($role)
+		{
+		    $this->role = $role;
 		}
 		
 		public function setUsername($username) {

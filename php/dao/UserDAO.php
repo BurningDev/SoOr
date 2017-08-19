@@ -16,9 +16,11 @@
 		    
 		    while($row = mysql_fetch_array($rs)) {		        
 		        $user = new User();
+		        $user->setId($row["ID"]);
 		        $user->setUsername($row["Username"]);
 		        $user->setPassword($row["Password"]);
 		        $user->setCreationDate($row["CreationDate"]);
+		        $user->setRole($row["Role"]);
 		        
 		        array_push($result, $user);
 		    }
@@ -27,7 +29,13 @@
 		}
 		
 		public function createUser($user) {
-		    $sql = "INSERT INTO `soor`.`user` (`CreationDate`, `Username`, `Password`, `Admin`, `Status`) VALUES ('".$user->getCreationDate()."', '".$user->getUsername()."', '".$user->getPassword()."', '".$user->getAdmin()."', '".$user->getStatus()."');";
+		    $sql = "INSERT INTO `soor`.`user` (`CreationDate`, `Username`, `Password`, `Role`, `Admin`, `Status`) VALUES ('".$user->getCreationDate()."', '".$user->getUsername()."', '".$user->getPassword()."', '".$user->getRole()."', '".$user->getAdmin()."', '".$user->getStatus()."');";
+		    
+		    mysql_query($sql);
+		}
+		
+		public function deleteUserById($id) {
+		    $sql = "DELETE FROM user WHERE ID = ".$id;
 		    
 		    mysql_query($sql);
 		}

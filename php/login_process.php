@@ -24,6 +24,7 @@ Licensed unter MIT-License
 		<?php
 			if(!isset($_POST['username'])) {
 				errorAll("Error!", "You haven't set the username.");
+				return;
 			}
 			
             $userdao = new UserDAO("localhost", "root", "", "soor");
@@ -50,5 +51,11 @@ Licensed unter MIT-License
                 errorAll("Error!", "Username not found.");
             }
         ?>
+        
+        <script type="text/javascript">
+        	setTimeout(function(){ 
+        		window.location.href = '../index.php'; 
+        	}, 2000);
+        </script>
 	</body>
 </html>
