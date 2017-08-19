@@ -4,8 +4,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th>No.</th>
-          <th>Creationdate</th>
+          <th style="width: 60px">No.</th>
           <th>Username</th>
         </tr>
       </thead>
@@ -24,8 +23,7 @@
           	    
           	    echo "<tr>";
           	    echo "<th scope=\"row\">".$count."</th>";
-          	    echo "<td>".$user->getCreationDate()."</td>";
-          	    echo "<td>".$user->getUsername()."</td>";
+          	    echo "<td><a href=\"index.php?page=member_view&username=".$user->getUsername()."\">".$user->getUsername()."</a></td>";
           	    echo "</tr>";
           	}
       	?>

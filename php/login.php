@@ -31,6 +31,8 @@ Licensed unter MIT-License
 
 <footer>
 	<div class="container">
-		<a href="php/contributors.php">Contributors</a>
+		SoOr - SoftwareOrganizer
+		<br />Licensed under MIT-License
+		<br /><a href="php/contributors.php">Contributors</a>
 	</div>
 </footer>

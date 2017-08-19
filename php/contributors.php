@@ -15,7 +15,7 @@ Licensed unter MIT-License
 	<body>
 		<div class="container">
 			<h2>Contributors</h2>
-			<h6>all contributors from this project</h6><br />
+			<h6>all contributors of this project</h6><br />
 			<ul>
 				<li>BurningDev</li>
 			</ul>

@@ -4,8 +4,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th>No.</th>
-          <th>Creationdate</th>
+          <th style="width: 60px">No.</th>
           <th>Name</th>
         </tr>
       </thead>
@@ -24,7 +23,6 @@
           	    
           	    echo "<tr>";
           	    echo "<th scope=\"row\">".$count."</th>";
-          	    echo "<td>".$team->getCreationDate()."</td>";
           	    echo "<td>".$team->getName()."</td>";
           	    echo "</tr>";
           	}
