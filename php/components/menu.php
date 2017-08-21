@@ -5,7 +5,7 @@
 		<li class="nav-item"><a class="nav-link pr-3" href="index.php?page=home">Home</a></li>
 			<li class="nav-item"><a class="nav-link pr-3" href="index.php?page=members">Members</a></li>
 			<li class="nav-item"><a class="nav-link pr-3" href="index.php?page=teams">Teams</a></li>
-			<li class="nav-item"><a class="nav-link pr-3" href="">Projects</a></li>
+			<li class="nav-item"><a class="nav-link pr-3" href="index.php?page=projects">Projects</a></li>
 			<li class="nav-item"><a class="nav-link pr-3" href="">Issues</a></li>
 			<li class="nav-item"><a class="nav-link pr-3" href="php/logout_process.php">Sign out</a></li>
 		</ul>

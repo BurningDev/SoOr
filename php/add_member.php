@@ -13,13 +13,17 @@
     		<div class="form-group">
     			<label>Role</label>
         		<select name="role" class="form-control">
-        			<option>web developer</option>
-        			<option>software developer</option>
-        			<option>software architect</option>
-        			<option>graphic artist</option>
-        			<option>project manager</option>
-        			<option>tester</option>
-        			<option>other</option>
+        			<?php 
+                        require("dao/RoleDAO.php");
+                        require("objects/Role.php");
+                        
+                        $roleDao = new RoleDAO("localhost", "root", "", "soor");
+                        $roles = $roleDao->getAllRoles();
+                        
+                        foreach($roles as $role) {
+                            echo "<option>".$role->getTitle()."</option>";
+                        }
+        			?>
         		</select>
         	</div>
 			<label>Admin</label>

@@ -55,7 +55,7 @@ Licensed unter MIT-License
         <script type="text/javascript">
         	setTimeout(function(){ 
         		window.location.href = '../index.php'; 
-        	}, 2000);
+        	}, 1500);
         </script>
 	</body>
 </html>

@@ -4,7 +4,7 @@
     	<form method="POST" action="php/add_team_process.php">
     		<div class="form-group">
     			<label>Name</label>
-    			<input class="form-control" name="username" type="text" required/>
+    			<input class="form-control" name="name" type="text" required/>
     		</div>
     		<div class="form-group">
     			<label>Description</label>
