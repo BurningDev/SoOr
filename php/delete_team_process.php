@@ -17,12 +17,12 @@ Licensed unter MIT-License
 		    session_start();
 		
 			require('util/alert_util.php');
-			require("dao/TeamDAO.php");
+			require('dao/TeamDAO.php');
 			require("objects/Team.php");
 		?>
 		
-		<?php		
-			if(!isset($_POST['name'])) {
+		<?php
+			if(!isset($_GET['teamname'])) {
 				errorAll("Error!", "You haven't set the teamname.");
 				return;
 			}
@@ -31,21 +31,21 @@ Licensed unter MIT-License
             
             $teams = $teamdao->getAllTeams();
             
+            $existTeam = false;
+            
             foreach($teams as $tempTeam) {
-                if(strcmp($tempTeam->getName(), $_POST['name']) == 0) {
-                    errorAll("Error!", "The teamname exist.");
-                    return;
+                if(strcmp($tempteam->getName(), $_GET['teamname']) == 0) {
+                    $existTeam = true;
                 }
             }
             
-            $team = new Team();
-            $team->setCreationDate(date("d.m.Y"));
-            $team->setName($_POST['name']);
-            $team->setDescription($_POST['description']);
-            $team->setStatus(0);
-            $teamdao->createTeam($team);
+            if($existTeam == false) {
+                errorAll("Error!", "The team doesen't exist.");
+                return;
+            }
             
-            successAll("Success!", "Created successful a new team.");
+            $teamdao->deleteTeamById($_GET['id']);
+            successAll("Success!", "Deleted successful the team.");
         ?>
 	</body>
 </html>

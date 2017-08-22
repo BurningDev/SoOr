@@ -23,7 +23,7 @@
           	    
           	    echo "<tr>";
           	    echo "<th scope=\"row\">".$count."</th>";
-          	    echo "<td>".$team->getName()."</td>";
+          	    echo "<td><a href=\"index.php?page=team_view&name=".$team->getName()."\">".$team->getName()."</a></td>";
           	    echo "</tr>";
           	}
       	?>

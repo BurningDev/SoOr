@@ -1,6 +1,8 @@
 <div class="container">
 	<br />
 	<div class="col-xl-6 col-lg-6 col-md-8">
+		<h3>Create project</h3>
+		<h5>Step 1</h5><br/>
     	<form method="POST" action="php/add_project_process.php">
     		<div class="form-group">
     			<label>Title</label>
@@ -60,7 +62,7 @@
     			<label>Programming language</label>
         		<input class="form-control" name="programminglanguage" type="text" required/>
     		</div>
-			<input class="btn btn-primary" type="submit" value="Add" />
+			<input class="btn btn-primary" type="submit" value="Next" />
 			<a class="btn btn-secondary" href="index.php?page=projects">Cancel</a>
     	</form>
 	</div>

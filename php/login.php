@@ -33,6 +33,6 @@ Licensed unter MIT-License
 	<div class="container">
 		SoOr - SoftwareOrganizer
 		<br />Licensed under MIT-License
-		<br /><a href="php/contributors.php">Contributors</a>
+		<br /><a href="php/contributors.php">Contributors</a> <a href="https://github.com/BurningDev/SoOr">Source</a>
 	</div>
 </footer>

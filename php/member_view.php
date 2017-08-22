@@ -18,6 +18,11 @@
                $user = $userTemp;
            }
        }
+       
+       if($user == null) {
+           errorAll("Error!", "The user doesen't exist.");
+           return;
+       }
     ?>
     
     <br />
