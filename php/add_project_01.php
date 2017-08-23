@@ -3,7 +3,7 @@
 	<div class="col-xl-6 col-lg-6 col-md-8">
 		<h3>Create project</h3>
 		<h5>Step 1</h5><br/>
-    	<form method="POST" action="php/add_project_process.php">
+    	<form method="POST" action="index.php?page=add_project_02">
     		<div class="form-group">
     			<label>Title</label>
     			<input class="form-control" name="title" type="text" required/>

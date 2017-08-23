@@ -14,10 +14,13 @@ Licensed unter MIT-License
 		<link href="lib\bootstrap\bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link href="css\style.css" rel="stylesheet" type="text/css" />
 		<!-- JS -->
-		<script src="lib\bootstrap\bootstrap.min.js" ></script>
-		<script src="lib\jquery\jquery.js" ></script>
+		<script type="text/javascript" src="lib\popper\popper.js"></script>
+		<script type="text/javascript" src="lib\popper\popper-utils.js"></script>
+		<script type="text/javascript" src="lib\jquery\jquery.js"></script>
+		<script type="text/javascript" src="lib\jquery\jquery-ui.js"></script>
+		<script type="text/javascript" src="lib\bootstrap\bootstrap.js"></script>
 	</head>
-	<body>
+	<body>		
 		<?php
 		    session_start();
         ?>

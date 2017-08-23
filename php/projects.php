@@ -1,5 +1,5 @@
 <div class="container">
-	<br /><a href="index.php?page=add_project" class="btn btn-primary">Add project</a><br /><br />
+	<br /><a href="index.php?page=add_project_01" class="btn btn-primary">Add project</a><br /><br />
 
     <table class="table">
       <thead>

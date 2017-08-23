@@ -27,7 +27,7 @@
     
     <br />
     <h3><?php echo $team->getName(); ?></h3>
-    <b>CreationDate: </b><?php echo $team->getCreationDate(); ?><br />
+    <b>CreationDate: </b><?php echo $team->getCreationDate(); ?>
     
     <br /><br />
     
