@@ -8,19 +8,13 @@ Licensed unter MIT-License
 		<!-- OTHER -->
 		<title>SoOr</title>
 		<!-- META -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- CSS -->
 		<link href="lib\bootstrap\bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link href="css\style.css" rel="stylesheet" type="text/css" />
-		<!-- JS -->
-		<script type="text/javascript" src="lib\popper\popper.js"></script>
-		<script type="text/javascript" src="lib\popper\popper-utils.js"></script>
-		<script type="text/javascript" src="lib\jquery\jquery.js"></script>
-		<script type="text/javascript" src="lib\jquery\jquery-ui.js"></script>
-		<script type="text/javascript" src="lib\bootstrap\bootstrap.js"></script>
 	</head>
-	<body>		
+	<body>	
 		<?php
 		    session_start();
         ?>
@@ -43,5 +37,12 @@ Licensed unter MIT-License
 				return;
 			}
 		?>
+		
+	    <!-- JS -->
+		<script type="text/javascript" src="lib\popper\popper.js"></script>
+		<script type="text/javascript" src="lib\popper\popper-utils.js"></script>
+		<script type="text/javascript" src="lib\jquery\jquery.js"></script>
+		<script type="text/javascript" src="lib\jquery\jquery-ui.js"></script>
+		<script type="text/javascript" src="lib\bootstrap\bootstrap.js"></script>
 	</body>
 </html>

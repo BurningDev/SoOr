@@ -1,4 +1,6 @@
 <div class="container">
+	<br /><h2>Projects</h2>
+
 	<br /><a href="index.php?page=add_project_01" class="btn btn-primary">Add project</a><br /><br />
 
     <table class="table">

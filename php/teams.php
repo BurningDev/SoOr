@@ -1,4 +1,6 @@
 <div class="container">
+	<br /><h2>Teams</h2>
+
 	<br /><a href="index.php?page=add_team" class="btn btn-primary">Add team</a><br /><br />
 
     <table class="table">

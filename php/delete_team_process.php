@@ -11,6 +11,7 @@ Licensed unter MIT-License
 		<meta charset="utf-8">
 		<!-- CSS -->
 		<link href="..\lib\bootstrap\bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="..\css\style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<?php

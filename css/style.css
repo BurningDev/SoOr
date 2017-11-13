@@ -15,3 +15,20 @@ footer {
 .navbar-light {
 	background-color: #e8e8e8;
 }
+
+/* ALERTS */
+.alert {
+	border-radius: 0px;
+}
+
+.alert-danger {
+	color: #ffffff;
+    background-color: #f93535;
+    border-color: #e80000;
+}
+
+.alert-success {
+	color: #ffffff;
+    background-color: #28ad48;
+    border-color: #10922d;
+}

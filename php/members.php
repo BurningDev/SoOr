@@ -1,4 +1,6 @@
 <div class="container">
+	<br /><h2>Members</h2>
+
 	<br /><a href="index.php?page=add_member" class="btn btn-primary">Add user</a><br /><br />
 
     <table class="table">
