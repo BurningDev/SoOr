@@ -23,7 +23,7 @@ Licensed unter MIT-License
 		<?php
 		      session_destroy();
 		      
-		      successAll("Success", "You are logged off.");
+		      showSuccessAll("Success", "You are logged off.");
         ?>
         
         <script type="text/javascript">

@@ -24,7 +24,7 @@ Licensed unter MIT-License
 		
 		<?php		
 			if(!isset($_POST['name'])) {
-				errorAll("Error!", "You haven't set the teamname.");
+				showErrorAll("Error!", "You haven't set the teamname.");
 				return;
 			}
 			
@@ -34,7 +34,7 @@ Licensed unter MIT-License
             
             foreach($teams as $tempTeam) {
                 if(strcmp($tempTeam->getName(), $_POST['name']) == 0) {
-                    errorAll("Error!", "The teamname exist.");
+                    showErrorAll("Error!", "The teamname exist.");
                     return;
                 }
             }
@@ -46,7 +46,7 @@ Licensed unter MIT-License
             $team->setStatus(0);
             $teamdao->createTeam($team);
             
-            successAll("Success!", "Created successful a new team.");
+            showSuccessAll("Success!", "Created successful a new team.");
         ?>
 	</body>
 </html>

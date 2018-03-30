@@ -3,15 +3,17 @@
 	   require('dao/UserDAO.php');
        require("objects/User.php");
        require('util/alert_util.php');
-          	
+       
        if(!isset($_GET['username'])) {
-           errorAll("Error!", "You don't set the username.");
+           showErrorAll("Error!", "You don't set the username.");
            return;
        }
        
        $userDao = new UserDAO("localhost", "root", "", "soor");
        $users = $userDao->getAllUsers();
        $user = null;
+       
+       handleAlert();
        
        foreach($users as $userTemp) {
            if(strcmp($userTemp->getUsername(), $_GET['username']) == 0) {
@@ -20,7 +22,7 @@
        }
        
        if($user == null) {
-           errorAll("Error!", "The user doesen't exist.");
+           showErrorAll("Error!", "The user doesen't exist.");
            return;
        }
     ?>

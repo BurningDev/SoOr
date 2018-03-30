@@ -1,6 +1,17 @@
 <div class="container">
 	<br />
 	<div class="col-xl-6 col-lg-6 col-md-8">
+		<?php 
+    		require("dao/RoleDAO.php");
+    		require("objects/Role.php");
+    		require("util/alert_util.php");
+    		
+    		$roleDao = new RoleDAO("localhost", "root", "", "soor");
+    		$roles = $roleDao->getAllRoles();
+    		
+    		handleAlert();
+		?>
+	
     	<form method="POST" action="php/add_member_process.php">
     		<div class="form-group">
     			<label>Username</label>
@@ -14,12 +25,6 @@
     			<label>Role</label>
         		<select name="role" class="form-control">
         			<?php 
-                        require("dao/RoleDAO.php");
-                        require("objects/Role.php");
-                        
-                        $roleDao = new RoleDAO("localhost", "root", "", "soor");
-                        $roles = $roleDao->getAllRoles();
-                        
                         foreach($roles as $role) {
                             echo "<option>".$role->getTitle()."</option>";
                         }

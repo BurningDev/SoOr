@@ -15,9 +15,12 @@
       	<?php 
           	require('dao/UserDAO.php');
           	require("objects/User.php");
+          	require("util/alert_util.php");
           	
           	$userDao = new UserDAO("localhost", "root", "", "soor");
           	$users = $userDao->getAllUsers();
+          	
+          	handleAlert();
           	
           	$count = 0;
           	

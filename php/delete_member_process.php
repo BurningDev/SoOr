@@ -24,7 +24,7 @@ Licensed unter MIT-License
 		
 		<?php
 			if(!isset($_GET['username'])) {
-				errorAll("Error!", "You haven't set the member.");
+				showErrorAll("Error!", "You haven't set the member.");
 				return;
 			}
 			
@@ -41,12 +41,14 @@ Licensed unter MIT-License
             }
             
             if($existUser == false) {
-                errorAll("Error!", "The member doesen't exist.");
+                showErrorAll("Error!", "The member doesen't exist.");
                 return;
             }
             
             $userdao->deleteUserById($_GET['id']);
-            successAll("Success!", "Deleted successful the user.");
+            success("Success!", "Deleted successful the user.");
+            header("Location: ../index.php?page=members");
+            exit();
         ?>
 	</body>
 </html>

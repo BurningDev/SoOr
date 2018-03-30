@@ -24,7 +24,7 @@ Licensed unter MIT-License
 		
 		<?php
 			if(!isset($_GET['teamname'])) {
-				errorAll("Error!", "You haven't set the teamname.");
+				showErrorAll("Error!", "You haven't set the teamname.");
 				return;
 			}
 			
@@ -41,12 +41,12 @@ Licensed unter MIT-License
             }
             
             if($existTeam == false) {
-                errorAll("Error!", "The team doesen't exist.");
+                showErrorAll("Error!", "The team doesen't exist.");
                 return;
             }
             
             $teamdao->deleteTeamById($_GET['id']);
-            successAll("Success!", "Deleted successful the team.");
+            showSuccessAll("Success!", "Deleted successful the team.");
         ?>
 	</body>
 </html>

@@ -24,7 +24,7 @@ Licensed unter MIT-License
 		
 		<?php
 			if(!isset($_POST['username'])) {
-				errorAll("Error!", "You haven't set the username.");
+				showErrorAll("Error!", "You haven't set the username.");
 				return;
 			}
 			
@@ -40,16 +40,16 @@ Licensed unter MIT-License
                         $_SESSION['username'] = $_POST['username'];
                         $_SESSION['password'] = hash("sha256", $_POST['password']);
                         
-                        successAll("Success!", "You are logged in.");
+                        showSuccessAll("Success!", "You are logged in.");
                     } else {
-                        errorAll("Error!", "Password is wrong.");
+                        showErrorAll("Error!", "Password is wrong.");
                         return;
                     }
                 }
             }
             
             if($existUser == false) {
-                errorAll("Error!", "Username not found.");
+                showErrorAll("Error!", "Username not found.");
             }
         ?>
         

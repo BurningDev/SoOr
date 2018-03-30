@@ -5,7 +5,7 @@
        require('util/alert_util.php');
           	
        if(!isset($_GET['name'])) {
-           errorAll("Error!", "You don't set the teamname.");
+           showErrorAll("Error!", "You don't set the teamname.");
            return;
        }
        
@@ -20,7 +20,7 @@
        }
        
        if($team == null) {
-           errorAll("Error!", "The teamname doesen't exist.");
+           showErrorAll("Error!", "The teamname doesen't exist.");
            return;
        }
     ?>
