@@ -1,6 +1,11 @@
 <div class="container">
 	<br />
 	<div class="col-xl-6 col-lg-6 col-md-8">
+		<?php
+		  require("util/alert_util.php");
+		  
+		  handleAlert();
+		?>
     	<form method="POST" action="php/add_team_process.php">
     		<div class="form-group">
     			<label>Name</label>

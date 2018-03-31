@@ -18,6 +18,13 @@ Licensed unter MIT-License
 		return;
 	}
 	
+	if(strcmp($_POST['passwordRe'], $_POST['password']) != 0) {
+	    error("Error!", "The passwords must be equal.");
+	    header("Location: ../index.php?page=add_member");
+	    exit();
+	    return;
+	}
+	
     $userdao = new UserDAO("localhost", "root", "", "soor");
     
     $users = $userdao->getAllUsers();

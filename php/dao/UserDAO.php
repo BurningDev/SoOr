@@ -39,5 +39,25 @@
 		    
 		    mysql_query($sql);
 		}
+		
+		public function getUserById($id) {
+		    $sql = "SELECT * FROM user WHERE ID = ".$id;
+		    $rs = mysql_query($sql) or die("SQL-Error: ".mysql_error());
+		    
+		    $result = array();
+		    
+		    while($row = mysql_fetch_array($rs)) {
+		        $user = new User();
+		        $user->setId($row["ID"]);
+		        $user->setUsername($row["Username"]);
+		        $user->setPassword($row["Password"]);
+		        $user->setCreationDate($row["CreationDate"]);
+		        $user->setRole($row["Role"]);
+		        
+		        array_push($result, $user);
+		    }
+		    
+		    return $result;
+		}
 	}
 ?>

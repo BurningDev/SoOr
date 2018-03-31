@@ -22,6 +22,10 @@
     			<input class="form-control" name="password" type="password" required/>
     		</div>
     		<div class="form-group">
+    			<label>Repeat password</label>
+    			<input class="form-control" name="passwordRe" type="password" required/>
+    		</div>
+    		<div class="form-group">
     			<label>Role</label>
         		<select name="role" class="form-control">
         			<?php 

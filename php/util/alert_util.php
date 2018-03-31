@@ -37,6 +37,7 @@
 	
 	function handleAlert() {
 	    if(!isset($_SESSION['alert_title']) || !isset($_SESSION['alert_msg']) || !isset($_SESSION['alert_type'])) {
+	        echo "1";
 	        return;
 	    }
 	    
