@@ -5,22 +5,22 @@ Licensed unter MIT-License
 <?php
     session_start();
 
-	require('util/alert_util.php');
-	require('dao/UserDAO.php');
-	require("objects/User.php");
+	require('../util/alert_util.php');
+	require('../dao/UserDAO.php');
+	require("../objects/User.php");
 ?>
 
 <?php		
 	if(!isset($_POST['username'])) {
 		error("Error!", "You haven't set the username.");
-		header("Location: ../index.php?page=add_member");
+		header("Location: ../../index.php?page=add_member");
 		exit();
 		return;
 	}
 	
 	if(strcmp($_POST['passwordRe'], $_POST['password']) != 0) {
 	    error("Error!", "The passwords must be equal.");
-	    header("Location: ../index.php?page=add_member");
+	    header("Location: ../../index.php?page=add_member");
 	    exit();
 	    return;
 	}
@@ -32,7 +32,7 @@ Licensed unter MIT-License
     foreach($users as $tempUser) {
         if(strcmp($tempUser->getUsername(), $_POST['username']) == 0) {
             error("Error!", "The username exist.");
-            header("Location: ../index.php?page=add_member");
+            header("Location: ../../index.php?page=add_member");
             exit();
             return;
         }
@@ -52,6 +52,6 @@ Licensed unter MIT-License
     $userdao->createUser($user);
     
     success("Success!", "Added successfully a member.");
-    header("Location: ../index.php?page=members");
+    header("Location: ../../index.php?page=members");
     exit();
 ?>

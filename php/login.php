@@ -9,7 +9,7 @@ Licensed unter MIT-License
 		</div>
 		
 		<div class="col-xl-6 col-lg-6 col-md-8">
-			<form method="POST" action="php/login_process.php">
+			<form method="POST" action="php/proc/login_process.php">
 				<div class="form-group">
 					<label for="username">Username</label>
 					<input type="text" class="form-control" id="username" name="username" placeholder="Enter username here" required>

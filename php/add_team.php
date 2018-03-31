@@ -6,7 +6,7 @@
 		  
 		  handleAlert();
 		?>
-    	<form method="POST" action="php/add_team_process.php">
+    	<form method="POST" action="php/proc/add_team_process.php">
     		<div class="form-group">
     			<label>Name</label>
     			<input class="form-control" name="name" type="text" required/>

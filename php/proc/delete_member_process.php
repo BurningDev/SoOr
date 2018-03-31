@@ -5,15 +5,15 @@ Licensed unter MIT-License
 <?php
     session_start();
 
-	require('util/alert_util.php');
-	require('dao/UserDAO.php');
-	require("objects/User.php");
+	require('../util/alert_util.php');
+	require('../dao/UserDAO.php');
+	require("../objects/User.php");
 ?>
 
 <?php
 	if(!isset($_GET['username'])) {
 		error("Error!", "You haven't set the member.");
-		header("Location: ../index.php?page=members");
+		header("Location: ../../index.php?page=members");
 		exit();
 		return;
 	}
@@ -32,13 +32,13 @@ Licensed unter MIT-License
     
     if($existUser == false) {
         error("Error!", "The member doesen't exist.");
-        header("Location: ../index.php?page=members");
+        header("Location: ../../index.php?page=members");
         exit();
         return;
     }
     
     $userdao->deleteUserById($_GET['id']);
     success("Success!", "Deleted successful the user.");
-    header("Location: ../index.php?page=members");
+    header("Location: ../../index.php?page=members");
     exit();
 ?>

@@ -12,7 +12,7 @@
     		handleAlert();
 		?>
 	
-    	<form method="POST" action="php/add_member_process.php">
+    	<form method="POST" action="php/proc/add_member_process.php">
     		<div class="form-group">
     			<label>Username</label>
     			<input class="form-control" name="username" type="text" required/>

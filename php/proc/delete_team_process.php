@@ -5,15 +5,15 @@ Licensed unter MIT-License
 <?php
     session_start();
 
-	require('util/alert_util.php');
-	require('dao/TeamDAO.php');
-	require("objects/Team.php");
+	require('../util/alert_util.php');
+	require('../dao/TeamDAO.php');
+	require("../objects/Team.php");
 ?>
 
 <?php
 	if(!isset($_GET['teamname'])) {
 		error("Error!", "You haven't set the teamname.");
-		header("Location: ../index.php?page=teams");
+		header("Location: ../../index.php?page=teams");
 		exit();
 		return;
 	}
@@ -32,13 +32,13 @@ Licensed unter MIT-License
     
     if($existTeam == false) {
         error("Error!", "The team doesen't exist.");
-        header("Location: ../index.php?page=teams");
+        header("Location: ../../index.php?page=teams");
         exit();
         return;
     }
     
     $teamdao->deleteTeamById($_GET['id']);
     success("Success!", "Deleted successful the team.");
-    header("Location: ../index.php?page=teams");
+    header("Location: ../../index.php?page=teams");
     exit();
 ?>

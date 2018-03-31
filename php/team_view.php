@@ -39,7 +39,7 @@
     <div class="row">
     	<div class="col-lg-6">
     	<h4>Members</h4>
-    		<form action="php/member_team_process.php" method="GET">
+    		<form action="php/proc/member_team_process.php" method="GET">
     			<div class="input-group">
                   <select name="pk" class="form-control">
     				<?php 
@@ -89,7 +89,7 @@
                   	    echo "<tr>";
                   	    echo "<th scope=\"row\">".$count."</th>";
                   	    echo "<td>".$user[0]->getUsername()."</td>";
-                  	    echo "<td><a href=\"php/member_team_process.php?action=delete&team=".$team->getId()."&pk=".$user[0]->getId()."\" class=\"btn btn-secondary\">Delete</a></td>";
+                  	    echo "<td><a href=\"php/proc/member_team_process.php?action=delete&team=".$team->getId()."&pk=".$user[0]->getId()."\" class=\"btn btn-secondary\">Delete</a></td>";
                   	    echo "</tr>";
                   	}
               	?>
@@ -98,6 +98,6 @@
     	</div>
 	</div>
     
-    <a class="btn btn-warning" href="php/delete_team_process.php?teamname=<?php echo $team->getName(); ?>&id=<?php echo $team->getId(); ?>">Delete team</a>
+    <a class="btn btn-warning" href="php/proc/delete_team_process.php?teamname=<?php echo $team->getName(); ?>&id=<?php echo $team->getId(); ?>">Delete team</a>
     <a class="btn btn-secondary" href="index.php?page=teams">Back</a>
 </div>

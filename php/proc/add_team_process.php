@@ -5,15 +5,15 @@ Licensed unter MIT-License
 <?php
     session_start();
 
-	require('util/alert_util.php');
-	require("dao/TeamDAO.php");
-	require("objects/Team.php");
+	require('../util/alert_util.php');
+	require("../dao/TeamDAO.php");
+	require("../objects/Team.php");
 ?>
 
 <?php		
 	if(!isset($_POST['name'])) {
 		error("Error!", "You haven't set the teamname.");
-		header("Location: ../index.php?page=add_team");
+		header("Location: ../../index.php?page=add_team");
 		exit();
 		return;
 	}
@@ -25,7 +25,7 @@ Licensed unter MIT-License
     foreach($teams as $tempTeam) {
         if(strcmp($tempTeam->getName(), $_POST['name']) == 0) {
             error("Error!", "The teamname exist.");
-            header("Location: ../index.php?page=add_team");
+            header("Location: ../../index.php?page=add_team");
             exit();
             return;
         }
@@ -39,6 +39,6 @@ Licensed unter MIT-License
     $teamdao->createTeam($team);
     
     success("Success!", "Created successful a new team.");
-    header("Location: ../index.php?page=teams");
+    header("Location: ../../index.php?page=teams");
     exit();
 ?>

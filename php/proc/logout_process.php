@@ -17,7 +17,7 @@ Licensed unter MIT-License
 		<?php
 	        session_start();
 		
-			require('util/alert_util.php');
+			require('../util/alert_util.php');
 		?>
 		
 		<?php
@@ -28,7 +28,7 @@ Licensed unter MIT-License
         
         <script type="text/javascript">
         	setTimeout(function(){ 
-        		window.location.href = '../index.php'; 
+        		window.location.href = '../../index.php'; 
         	}, 1500);
         </script>
 	</body>

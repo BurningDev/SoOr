@@ -1,13 +1,13 @@
 <?php
     session_start();
 
-    require('util/alert_util.php');
-    require('dao/UserTeamDAO.php');
-    require('objects/UserTeam.php');
+    require('../util/alert_util.php');
+    require('../dao/UserTeamDAO.php');
+    require('../objects/UserTeam.php');
     
     if(!isset($_GET['action'])) {        
         error("Error!", "An error occured. Please try again.");
-        header("Location: ../index.php?page=teams");
+        header("Location: ../../index.php?page=teams");
         exit();
         return;
     }
@@ -25,14 +25,14 @@
         $userDao->createUserTeam($userTeam);
         
         success("Success!", "Assigned successful the member.");
-        header("Location: ../index.php?page=team_view&pk=".$teamId);
+        header("Location: ../../index.php?page=team_view&pk=".$teamId);
     }
     
     if(strcmp($action, "delete") == 0) {
         $userDao->deleteUserTeamById($userId, $teamId);
         
         success("Success!", "Deleted successful the member.");
-        header("Location: ../index.php?page=team_view&pk=".$teamId);
+        header("Location: ../../index.php?page=team_view&pk=".$teamId);
     }
     
     exit();

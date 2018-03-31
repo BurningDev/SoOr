@@ -53,5 +53,17 @@
             
             mysql_query($sql);
         }
+        
+        public function deleteAllUserById($userId) {
+            $sql = "DELETE FROM user_team WHERE UserID = ".$userId;
+            
+            mysql_query($sql);
+        }
+        
+        public function deleteAllTeamById($teamId) {
+            $sql = "DELETE FROM user_team WHERE TeamID = ".$teamId;
+            
+            mysql_query($sql);
+        }
     }
 ?>
