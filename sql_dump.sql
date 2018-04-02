@@ -34,6 +34,24 @@ CREATE TABLE `project` (
 -- --------------------------------------------------------
 
 --
+-- Table: right
+--
+
+CREATE TABLE `right` (
+  `ID` int(11) NOT NULL,
+  `Right` varchar(45) NOT NULL,
+  `Admin` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `right` (`ID`, `Right`, `Admin`) VALUES
+(1, 'add_member', 1),
+(2, 'add_team', 1),
+(3, 'delete_member', 1),
+(4, 'delete_team', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table: role
 --
 
@@ -41,10 +59,6 @@ CREATE TABLE `role` (
   `ID` int(11) NOT NULL,
   `Title` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Data for Table: role
---
 
 INSERT INTO `role` (`ID`, `Title`) VALUES
 (1, 'web developer'),
@@ -85,27 +99,52 @@ CREATE TABLE `user` (
   `Status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table: user_team
+--
+
+CREATE TABLE `user_team` (
+  `UserID` int(11) NOT NULL,
+  `TeamID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 ALTER TABLE `project`
   ADD PRIMARY KEY (`ID`);
+
+
+ALTER TABLE `right`
+  ADD PRIMARY KEY (`ID`);
+
 
 ALTER TABLE `role`
   ADD PRIMARY KEY (`ID`);
 
+
 ALTER TABLE `team`
   ADD PRIMARY KEY (`ID`);
+
 
 ALTER TABLE `user`
   ADD PRIMARY KEY (`ID`);
 
   
+ALTER TABLE `user_team`
+  ADD PRIMARY KEY (`UserID`,`TeamID`);
+
 ALTER TABLE `project`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+ALTER TABLE `right`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 ALTER TABLE `role`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 ALTER TABLE `team`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;

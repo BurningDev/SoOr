@@ -5,6 +5,7 @@ Licensed unter MIT-License
 <?php
     session_start();
 
+    require('../../config.php');
 	require('../util/alert_util.php');
 	require("../dao/TeamDAO.php");
 	require("../objects/Team.php");
@@ -18,7 +19,7 @@ Licensed unter MIT-License
 		return;
 	}
 	
-    $teamdao = new TeamDAO("localhost", "root", "", "soor");
+	$teamdao = new TeamDAO($CONFIG['sql_address'], $CONFIG['sql_user'], $CONFIG['sql_password'], $CONFIG['sql_database']);
     
     $teams = $teamdao->getAllTeams();
     

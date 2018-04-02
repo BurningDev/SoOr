@@ -3,6 +3,15 @@ div.fill {
 	min-height: 650px	
 }
 
+div.box {
+	background-color: #e8e8e8;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-left: solid 10px #5c5c5c;
+}
+
 /* COMPONENTS */
 footer {
 	background-color: #e8e8e8;

@@ -10,13 +10,14 @@ Licensed unter MIT-License
 		<!-- META -->
 		<meta charset="utf-8">
 		<!-- CSS -->
-		<link href="..\lib\bootstrap\bootstrap.min.css" rel="stylesheet" type="text/css" />
-		<link href="..\css\style.css" rel="stylesheet" type="text/css" />
+		<link href="..\..\lib\bootstrap\bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="..\..\css\style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<?php
 		    session_start();
 		
+		    require('../../config.php');
 			require('../util/alert_util.php');
 			require('../dao/UserDAO.php');
 			require("../objects/User.php");
@@ -28,7 +29,7 @@ Licensed unter MIT-License
 				return;
 			}
 			
-            $teamdao = new UserDAO("localhost", "root", "", "soor");
+			$teamdao = new UserDAO($CONFIG['sql_address'], $CONFIG['sql_user'], $CONFIG['sql_password'], $CONFIG['sql_database']);
             $teams = $teamdao->getAllUsers();
             
             $existUser = false;
@@ -39,6 +40,7 @@ Licensed unter MIT-License
                     if(strcmp($user->getPassword(), hash("sha256", $_POST['password'])) == 0) {
                         $_SESSION['username'] = $_POST['username'];
                         $_SESSION['password'] = hash("sha256", $_POST['password']);
+                        $_SESSION['admin'] = $user->getAdmin();
                         
                         showSuccessAll("Success!", "You are logged in.");
                     } else {

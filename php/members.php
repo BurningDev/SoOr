@@ -1,6 +1,12 @@
 <div class="container">
 	<br /><h2>Members</h2>
 
+	<?php 
+    	require("util/alert_util.php");
+    	
+    	handleAlert();
+	?>
+	
 	<br /><a href="index.php?page=add_member" class="btn btn-primary">Add user</a><br /><br />
 
     <table class="table">
@@ -15,12 +21,9 @@
       	<?php 
           	require('dao/UserDAO.php');
           	require("objects/User.php");
-          	require("util/alert_util.php");
           	
           	$userDao = new UserDAO("localhost", "root", "", "soor");
           	$users = $userDao->getAllUsers();
-          	
-          	handleAlert();
           	
           	$count = 0;
           	

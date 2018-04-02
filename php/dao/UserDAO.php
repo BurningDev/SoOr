@@ -21,6 +21,7 @@
 		        $user->setPassword($row["Password"]);
 		        $user->setCreationDate($row["CreationDate"]);
 		        $user->setRole($row["Role"]);
+		        $user->setAdmin($row["Admin"]);
 		        
 		        array_push($result, $user);
 		    }
@@ -53,6 +54,7 @@
 		        $user->setPassword($row["Password"]);
 		        $user->setCreationDate($row["CreationDate"]);
 		        $user->setRole($row["Role"]);
+		        $user->setAdmin($row["Admin"]);
 		        
 		        array_push($result, $user);
 		    }

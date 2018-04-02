@@ -34,10 +34,10 @@
     <h3><?php echo $team->getName(); ?></h3>
     <b>CreationDate: </b><?php echo $team->getCreationDate(); ?>
     
-    <br /><hr>
+    <br />
     
     <div class="row">
-    	<div class="col-lg-6">
+    	<div class="col-lg-6 box">
     	<h4>Members</h4>
     		<form action="php/proc/member_team_process.php" method="GET">
     			<div class="input-group">
@@ -59,7 +59,7 @@
                 
                 <input type="text" name="team" value=<?php echo '"'.$team->getId().'"'; ?> class="invisible"/>
                 <input type="text" name="action" value="add" class="invisible"/>
-    		</form><br/>
+    		</form>
     		
             <table class="table">
               <thead>
@@ -79,12 +79,13 @@
                   	$count = 0;
                   	
                   	foreach($userTeams as $userTeam) {
-                  	    $count = $count + 1;
                   	    $user = $userDao->getUserById($userTeam->getUserId());
                   	    
                   	    if(count($user) == 0) {
                   	        continue;
                   	    }
+
+                  	    $count = $count + 1;
                   	    
                   	    echo "<tr>";
                   	    echo "<th scope=\"row\">".$count."</th>";
@@ -98,6 +99,6 @@
     	</div>
 	</div>
     
-    <a class="btn btn-warning" href="php/proc/delete_team_process.php?teamname=<?php echo $team->getName(); ?>&id=<?php echo $team->getId(); ?>">Delete team</a>
+    <a class="btn btn-primary" href="php/proc/delete_team_process.php?teamname=<?php echo $team->getName(); ?>&id=<?php echo $team->getId(); ?>">Delete team</a>
     <a class="btn btn-secondary" href="index.php?page=teams">Back</a>
 </div>

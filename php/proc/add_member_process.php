@@ -5,6 +5,7 @@ Licensed unter MIT-License
 <?php
     session_start();
 
+    require('../../config.php');
 	require('../util/alert_util.php');
 	require('../dao/UserDAO.php');
 	require("../objects/User.php");
@@ -25,7 +26,7 @@ Licensed unter MIT-License
 	    return;
 	}
 	
-    $userdao = new UserDAO("localhost", "root", "", "soor");
+	$userdao = new UserDAO($CONFIG['sql_address'], $CONFIG['sql_user'], $CONFIG['sql_password'], $CONFIG['sql_database']);
     
     $users = $userdao->getAllUsers();
     

@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+    require('../../config.php');
     require('../util/alert_util.php');
     require('../dao/UserTeamDAO.php');
     require('../objects/UserTeam.php');
@@ -16,7 +17,7 @@
     $teamId = $_GET['team'];
     $userId = $_GET['pk'];
     
-    $userDao = new UserTeamDAO("localhost", "root", "", "soor");
+    $userDao = new UserTeamDAO($CONFIG['sql_address'], $CONFIG['sql_user'], $CONFIG['sql_password'], $CONFIG['sql_database']);
     
     if(strcmp($action, "add") == 0) {
         $userTeam = new UserTeam();

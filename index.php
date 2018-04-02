@@ -16,6 +16,8 @@ Licensed unter MIT-License
 	</head>
 	<body>	
 		<?php
+		    require("config.php");
+		
 		    session_start();
         ?>
 	
@@ -29,9 +31,7 @@ Licensed unter MIT-License
 				    include "php/".$_GET["page"].".php";
 				}
 			}
-		?>
-		
-		<?php		
+
 			if(!isset($_SESSION['username'])) {
 				include('php/login.php');
 				return;

@@ -34,6 +34,6 @@
     
     <br /><br />
     
-    <a class="btn btn-warning" href="php/proc/delete_member_process.php?username=<?php echo $user->getUsername(); ?>&id=<?php echo $user->getId(); ?>">Delete member</a>
+    <a class="btn btn-primary" href="php/proc/delete_member_process.php?username=<?php echo $user->getUsername(); ?>&id=<?php echo $user->getId(); ?>">Delete member</a>
     <a class="btn btn-secondary" href="index.php?page=members">Back</a>
 </div>

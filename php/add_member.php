@@ -3,10 +3,15 @@
 	<div class="col-xl-6 col-lg-6 col-md-8">
 		<?php 
     		require("dao/RoleDAO.php");
+    		require("dao/RightDAO.php");
     		require("objects/Role.php");
+    		require("objects/Right.php");
     		require("util/alert_util.php");
+    		require("util/rights_util.php");
     		
-    		$roleDao = new RoleDAO("localhost", "root", "", "soor");
+    		validate_rights("add_member", "index.php?page=members");
+    		
+    		$roleDao = new RoleDAO($CONFIG['sql_address'], $CONFIG['sql_user'], $CONFIG['sql_password'], $CONFIG['sql_database']);
     		$roles = $roleDao->getAllRoles();
     		
     		handleAlert();

@@ -5,12 +5,18 @@ Licensed unter MIT-License
 <?php
     session_start();
 
+    require('../../config.php');
 	require('../util/alert_util.php');
+	require('../util/rights_util.php');
 	require('../dao/UserDAO.php');
+	require('../dao/RightDAO.php');
+	require("../objects/Right.php");
 	require("../objects/User.php");
 ?>
 
 <?php
+    validate_rights("delete_member", "../../index.php?page=members");
+
 	if(!isset($_GET['username'])) {
 		error("Error!", "You haven't set the member.");
 		header("Location: ../../index.php?page=members");
@@ -18,7 +24,7 @@ Licensed unter MIT-License
 		return;
 	}
 	
-    $userdao = new UserDAO("localhost", "root", "", "soor");
+	$userdao = new UserDAO($CONFIG['sql_address'], $CONFIG['sql_user'], $CONFIG['sql_password'], $CONFIG['sql_database']);
     
     $users = $userdao->getAllUsers();
     

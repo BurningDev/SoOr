@@ -5,12 +5,18 @@ Licensed unter MIT-License
 <?php
     session_start();
 
+    require('../../config.php');
 	require('../util/alert_util.php');
+	require('../util/rights_util.php');
 	require('../dao/TeamDAO.php');
+	require('../dao/RightDAO.php');
+	require("../objects/Right.php");
 	require("../objects/Team.php");
 ?>
 
 <?php
+    validate_rights("delete_team", "../../index.php?page=teams");    
+
 	if(!isset($_GET['teamname'])) {
 		error("Error!", "You haven't set the teamname.");
 		header("Location: ../../index.php?page=teams");
@@ -18,7 +24,7 @@ Licensed unter MIT-License
 		return;
 	}
 	
-    $teamdao = new TeamDAO("localhost", "root", "", "soor");
+	$teamdao = new TeamDAO($CONFIG['sql_address'], $CONFIG['sql_user'], $CONFIG['sql_password'], $CONFIG['sql_database']);
     
     $teams = $teamdao->getAllTeams();
     
